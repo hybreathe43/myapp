@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector,useDispatch } from 'react-redux';
+
+import {incnum,dec} from "./action";
 
 function App() {
+  const state=useSelector((state)=>state.changenumber);
+  const dispatch=useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React with sahil
-        </a>
-      </header>
+     <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="#"
+      role="button"
+      onClick={()=>dispatch(incnum())}
+      >+</a>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id=""
+          aria-describedby="helpId"
+          value={state}
+        />
+      
+     <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="#"
+      role="button"
+      onClick={()=>dispatch(dec(5))}
+      >-</a>
+     
     </div>
   );
 }
