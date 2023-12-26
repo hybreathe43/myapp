@@ -1,7 +1,7 @@
 import './App.css';
 import { useSelector,useDispatch } from 'react-redux';
 
-import {incnum,dec} from "./action";
+import {incnum,dec,add, sub} from "./action";
 
 function App() {
   const state=useSelector((state)=>state.changenumber);
@@ -33,6 +33,22 @@ function App() {
       role="button"
       onClick={()=>dispatch(dec(5))}
       >-</a>
+     <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="#"
+      role="button"
+      onClick={()=>dispatch(add(10))}
+      >add by 10 </a>
+     <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="#"
+      role="button"
+      onClick={()=>dispatch(sub(10))}
+      >Sub by 10 </a>
      
     </div>
   );
